@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "prebuild": "prisma generate && prisma migrate deploy",
+    "generate": "prisma generate",
+    "migrate-dev": "prisma migrate dev",
+    "migrate": "prisma migrate deploy",
     "start": "node aap.js ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend && prisma migrate deploy && prisma generate",
-    "postinstall": "npx prisma generate"
+    "postinstall": "prisma generate"
   },
  
   "keywords": [],
