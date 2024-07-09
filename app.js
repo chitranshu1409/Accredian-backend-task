@@ -19,12 +19,12 @@ app.get('/',(req,res)=>{
 app.post('/',async (req,res)=>{
     let {firstName,lastName,email,refereeEmail} =req.body;
     console.log(firstName,lastName,email,refereeEmail);
-    const newUser =await prisma.referals.create({data:{
-        firstName:firstName,
-        lastName:lastName,
-        email:email,
-        refereeEmail:refereeEmail,
-      }})
+    // const newUser =await prisma.referals.create({data:{
+    //     firstName:firstName,
+    //     lastName:lastName,
+    //     email:email,
+    //     refereeEmail:refereeEmail,
+    //   }})
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         secure:true,
